@@ -46,7 +46,7 @@ Ext.define("Ext.ux.exporter.ExporterButton", {
      * To remotely download file only if browser doesn't support locally 
      * otherwise it will try to open in new window
      */
-    remote: true,
+    remote: false,
     /**
      * @cfg {String} title
      * To set name to eported file, extension will be appended based on format  

@@ -64,11 +64,11 @@ Ext.define("Ext.ux.exporter.csvFormatter.CsvFormatter", {
                     } else {
                         values.push(this.parserDiv.innerText || this.parserDiv.textContent);
                     }
-                    value = "\""+values.join('\n')+"\"";
+                    value = values.join('\n');
                 } else {
                     var value = record.get(name);
                 }
-                cells.push(value);
+                cells.push("\""+value+"\"");
             }
         }, this);
         return cells.join(this.separator);

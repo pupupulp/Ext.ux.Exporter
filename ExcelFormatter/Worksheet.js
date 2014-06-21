@@ -163,7 +163,7 @@ Ext.define("Ext.ux.exporter.excelFormatter.Worksheet", {
                     } else {
                         values.push(this.parserDiv.innerText || this.parserDiv.textContent);
                     }
-                    value = values.join('  ');
+                    value = values.join(' ');
 
                 } else {
                     var value = record.get(name),
