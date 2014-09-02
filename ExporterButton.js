@@ -64,9 +64,6 @@ Ext.define("Ext.ux.exporter.ExporterButton", {
             }
             me.setComponent(me.store || me.component || me.up("gridpanel") || me.up("treepanel"), config);
         });
-        this.addEvents(
-            'start',
-            'complete');
     },
     
     onClick: function(e) {
