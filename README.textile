@@ -13,7 +13,7 @@ h2. Installation
 
 * Download the latest version from here and copy it into your ux/exporter folder.
 
-* Include "Ext.ux.expoter.Exporter" in requires of your App
+* Include "Ext.ux.exporter.Exporter" in requires of your App
 
 * Create an instance of ExporterButton with required configs
 
