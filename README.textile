@@ -25,7 +25,7 @@ bc.. var grid = new Ext.grid.GridPanel({
   store: someStore,
   tbar : [
     {
-      xtype: 'exportbutton',
+      xtype: 'exporterbutton',
       store: someStore
 	//Or you can use
       //component: someGrid
