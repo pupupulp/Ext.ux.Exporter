@@ -1,5 +1,12 @@
 # Ext.ux.Exporter
 
+![contributors](https://badgen.net/github/contributors/pupupulp/Ext.ux.Exporter)
+![stars](https://badgen.net/github/stars/pupupulp/Ext.ux.Exporter)
+![commits](https://badgen.net/github/commits/pupupulp/Ext.ux.Exporter)
+![last commit](https://badgen.net/github/last-commit/pupupulp/Ext.ux.Exporter)
+[![License](https://badgen.net/github/license/pupupulp/Ext.ux.Exporter)](https://github.com/pupupulp/Ext.ux.Exporter/blob/master/LICENSE.txt)
+
+
 Exporter is a generic export class which takes any Ext.data.Store-based component (e.g. grids and similar) and exports the data in any format.
 
 Exporter can work both client-side and server-side(only if browser doesn't support client side save).
@@ -191,6 +198,14 @@ You might want to checkout these projects:
 - [edspencer/Ext.ux.Exporter](https://github.com/edspencer/Ext.ux.Exporter) - Exports an Ext.data.Store to Excel or CSV.
 - [KonyvtarJS](https://github.com/pupupulp/konyvtar-js) - An opensource library/package of code wrappers for ExtJS 6.2.0 GPL.
 
+### Contributors
+
+- [Ed Spencer](https://github.com/edspencer)
+- [Yogesh Pandey](https://github.com/yogeshpandey009)
+- [masterx244](https://github.com/masterX244)
+- [Chris McCormick](https://github.com/cmccor)
+- [Eagan Martin](https://github.com/pupupulp)
+
 ### License
 
-Copyright © 2014, [Ed Spencer](https://github.com/edspencer). Release under the [MIT License](https://github.com/pupupulp/Ext.ux.Exporter/blob/master/LICENSE.txt)
+Copyright © 2014, [Ed Spencer](https://github.com/edspencer). Released under the [MIT License](https://github.com/pupupulp/Ext.ux.Exporter/blob/master/LICENSE.txt).
