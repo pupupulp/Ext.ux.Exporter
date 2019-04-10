@@ -55,6 +55,8 @@ Ext.define("Ext.ux.exporter.ExporterButton", {
     
     constructor: function(config) {
         var me = this;
+
+        me.preConfig = config;
         
         Ext.ux.exporter.ExporterButton.superclass.constructor.call(me, config);
         
@@ -77,7 +79,7 @@ Ext.define("Ext.ux.exporter.ExporterButton", {
             res, fullname;
 
         me.fireEvent('start', me);
-        res = Ext.ux.exporter.Exporter.exportAny(me.component, format, { title : title });
+        res = Ext.ux.exporter.Exporter.exportAny(me.component, me.store, format, { title : title });
         filename = title + "_" + Ext.Date.format(dt, "Y-m-d h:i:s") + "." + res.ext;
         Ext.ux.exporter.FileSaver.saveAs(res.data, res.mimeType, res.charset, filename, link, remote, me.onComplete, me);
         

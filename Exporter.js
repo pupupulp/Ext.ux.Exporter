@@ -14,11 +14,12 @@ Ext.define("Ext.ux.exporter.Exporter", {
         /**
          * Exports a grid, using formatter
          * @param {Ext.grid.Panel/Ext.data.Store/Ext.tree.Panel} componet/store to export from
+         * @param {Ext.data.Store} store to export from
          * @param {String/Ext.ux.exporter.Formatter} formatter
          * @param {Object} config Optional config settings for the formatter
          * @return {Object} with data, mimeType, charset, ext(extension)
          */
-        exportAny: function(component, format, config) {
+        exportAny: function(component, store, format, config) {
 
             var func = "export";
             if (!component.is) {
@@ -32,16 +33,17 @@ Ext.define("Ext.ux.exporter.Exporter", {
                 component = component.getStore();
             }
             var formatter = this.getFormatterByName(format);
-            return this[func](component, formatter, config);
+            return this[func](component, store, formatter, config);
         },
 
         /**
          * Exports a grid, using formatter
          * @param {Ext.grid.Panel} grid The grid to export from
+         * @param {Ext.data.Store} store to export from
          * @param {String/Ext.ux.exporter.Formatter} formatter
          * @param {Object} config Optional config settings for the formatter
          */
-        exportGrid: function(grid, formatter, config) {
+        exportGrid: function(grid, store, formatter, config) {
 
             config = config || {};
             formatter = this.getFormatterByName(formatter);
@@ -67,20 +69,21 @@ Ext.define("Ext.ux.exporter.Exporter", {
 
         /**
          * Exports a grid, using formatter
+         * @param {Ext.data.Store} component to export from
          * @param {Ext.data.Store} store to export from
          * @param {String/Ext.ux.exporter.Formatter} formatter
          * @param {Object} config Optional config settings for the formatter
          */
-        exportStore: function(store, formatter, config) {
+        exportStore: function(compomemt, store, formatter, config) {
 
             config = config || {};
             formatter = this.getFormatterByName(formatter);
             Ext.applyIf(config, {
-                columns: store.fields ? store.fields.items : store.model.prototype.fields.items
+                columns: component.fields ? component.fields.items : component.model.prototype.fields.items
             });
 
             return {
-                data: formatter.format(store, config),
+                data: formatter.format(component, config),
                 mimeType: formatter.mimeType,
                 charset: formatter.charset,
                 ext: formatter.extension
@@ -90,10 +93,11 @@ Ext.define("Ext.ux.exporter.Exporter", {
         /**
          * Exports a tree, using formatter
          * @param {Ext.tree.Panel} store to export from
+         * @param {Ext.data.Store} store to export from
          * @param {String/Ext.ux.exporter.Formatter} formatter
          * @param {Object} config Optional config settings for the formatter
          */
-        exportTree: function(tree, formatter, config) {
+        exportTree: function(tree, store, formatter, config) {
 
             config = config || {};
             formatter = this.getFormatterByName(formatter);
